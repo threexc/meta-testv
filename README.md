@@ -14,16 +14,16 @@ Dependencies
 ============
 
   URI: https://github.com/openembedded/openembedded-core
-      branch: master
-      revision: HEAD
+  branch: master
+  revision: HEAD
   
   URI: https://github.com/openembedded/bitbake
-      branch: master
-      revision: HEAD
+  branch: master
+  revision: HEAD
 
   URI: https://github.com/riscv/meta-riscv
-      branch: master
-      revision: HEAD
+  branch: master
+  revision: HEAD
 
 Contributing
 ============
