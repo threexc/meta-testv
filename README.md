@@ -28,7 +28,7 @@ Dependencies
 Contributing
 ============
 
-Please submit issues and pull requests via GitHub and/or Forgejo.
+Please open issues and submit patches via GitHub pull requests.
 
 Usage
 =====
