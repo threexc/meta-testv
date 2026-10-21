@@ -1,0 +1,151 @@
+{
+    "description": "meta-testv, meta-riscv and oe-core - 'testv' or 'nodistro' configuration",
+    "sources": {
+        "bitbake": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/bitbake",
+                "branch": "master",
+                "rev": "master"
+            }
+        },
+        "openembedded-core": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/openembedded-core",
+                "branch": "master",
+                "rev": "master"
+            }
+        },
+        "yocto-docs": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/yocto-docs",
+                "branch": "master",
+                "rev": "master"
+            }
+        },
+        "meta-riscv": {
+            "git-remote": {
+                "uri": "https://github.com/riscv/meta-riscv.git",
+                "branch": "master",
+                "rev": "master"
+            }
+        },
+        "meta-testv": {
+            "git-remote": {
+                "uri": "https://forgejo.baylibre.com/tgamblin/meta-testv.git",
+                "branch": "main",
+                "rev": "main"
+            }
+        }
+    },
+    "bitbake-setup": {
+        "configurations": [
+            {
+                "name": "testv",
+                "description": "OpenEmbedded with meta-testv",
+                "setup-dir-name": "$distro-master-meta-testv",
+                "bb-layers": [
+                    "openembedded-core/meta",
+                    "meta-riscv",
+                    "meta-testv"
+                ],
+                "bb-env-passthrough-additions": [
+                    "DL_DIR",
+                    "SSTATE_DIR"
+                ],
+                "oe-fragments-one-of": {
+                    "machine": {
+                        "description": "Target machines",
+                        "options": [
+                            {
+                                "name": "machine/bananapi-cm6-io",
+                                "description": "BananaPi CM6 IO"
+                            },
+                            {
+                                "name": "machine/bananapi-f3",
+                                "description": "BananaPi BPI-F3"
+                            },
+                            {
+                                "name": "machine/beaglev-ahead",
+                                "description": "BeagleV Ahead"
+                            },
+                            {
+                                "name": "machine/beaglev-fire",
+                                "description": "BeagleV-Fire"
+                            },
+                            {
+                                "name": "machine/dc-roma-fml13v01",
+                                "description": "DeepComputing DC-ROMA RISC-V Mainboard (FML13V01)"
+                            },
+                            {
+                                "name": "machine/eswin-ebc77",
+                                "description": "ESWIN EBC77 (Vendor Kernel)"
+                            },
+                            {
+                                "name": "machine/eswin-ebc77-mainline",
+                                "description": "ESWIN EBC77 (Mainline Kernel)"
+                            },
+                            {
+                                "name": "machine/freedom-u540",
+                                "description": "Freedom U540"
+                            },
+                            {
+                                "name": "machine/k3-com260",
+                                "description": "K3 CoM260"
+                            },
+                            {
+                                "name": "machine/k3-pico-itx",
+                                "description": "K3 Pico-ITX"
+                            },
+                            {
+                                "name": "machine/licheepi-4a",
+                                "description": "LicheePi 4A"
+                            },
+                            {
+                                "name": "machine/milkv-duo",
+                                "description": "Milk-V Duo"
+                            },
+                            {
+                                "name": "machine/milkv-duo256m",
+                                "description": "Milk-V Duo-256M"
+                            },
+                            {
+                                "name": "machine/milkv-duos",
+                                "description": "Milk-V Duo-S"
+                            },
+                            {
+                                "name": "machine/muse-pi-pro",
+                                "description": "SpacemiT Muse Pi Pro"
+                            },
+                            {
+                                "name": "machine/orangepi-r2s",
+                                "description": "OrangePi R2S"
+                            },
+                            {
+                                "name": "machine/orangepi-rv2",
+                                "description": "OrangePi RV2"
+                            },
+                            {
+                                "name": "machine/visionfive2",
+                                "description": "StarFive VisionFive 2"
+                            }
+                        ]
+                    },
+                    "distro": {
+                        "description": "Target distributions",
+                        "options": [
+                            {
+                                "name": "distro/testv",
+                                "description": "TEST-V (RISC-V Test Distro for Yocto)"
+                            },
+                            {
+                                "name": "distro/nodistro",
+                                "description": "OpenEmbedded 'nodistro'"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "version": "1.0"
+}

@@ -35,6 +35,20 @@ I. Adding the meta-testv layer to your build
 
 Run 'bitbake-layers add-layer meta-testv'
 
+II. Setting up a build with bitbake-setup
+=========================================
+
+A template is provided in bitbake-registry/:
+
+  meta-testv-oe-master.conf.json    oe-core + meta-riscv + meta-testv
+                                    (distro: testv or nodistro)
+
+For example:
+
+  bitbake-setup init --non-interactive \
+      https://raw.githubusercontent.com/threexc/meta-testv/refs/heads/main/bitbake-registry/meta-testv-oe-master.conf.json \
+      testv machine/k3-pico-itx distro/testv
+
 Maintainer(s)
 =============
 
