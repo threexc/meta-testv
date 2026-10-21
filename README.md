@@ -30,24 +30,28 @@ Contributing
 
 Please submit issues and pull requests via GitHub and/or Forgejo.
 
-I. Adding the meta-testv layer to your build
-=================================================
+Usage
+=====
 
-Run 'bitbake-layers add-layer meta-testv'
+Adding the meta-testv layer to your build
+-----------------------------------------
 
-II. Setting up a build with bitbake-setup
-=========================================
+Run: `bitbake-layers add-layer /path/to/meta-testv`
 
-A template is provided in bitbake-registry/:
+Setting up a build with bitbake-setup
+-------------------------------------
 
-  meta-testv-oe-master.conf.json    oe-core + meta-riscv + meta-testv
-                                    (distro: testv or nodistro)
+A template is provided at `bitbake-registry/meta-testv-oe-master.conf.json`,
+allowing selection of either `nodistro` or `testv`, along with the usual
+meta-riscv MACHINEs.
 
 For example:
 
-  bitbake-setup init --non-interactive \
-      https://raw.githubusercontent.com/threexc/meta-testv/refs/heads/main/bitbake-registry/meta-testv-oe-master.conf.json \
-      testv machine/k3-pico-itx distro/testv
+```
+bitbake-setup init --non-interactive \
+  https://raw.githubusercontent.com/threexc/meta-testv/refs/heads/main/bitbake-registry/meta-testv-oe-master.conf.json \
+  testv machine/k3-pico-itx distro/testv
+```
 
 Maintainer(s)
 =============
